@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>homepage</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+        .carousel-container{
+    position: relative;
+    width: 800px;
+    height: 450px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
+}
+
+.carousel img{
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,.5);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev{
+    left: 15px;
+}
+
+.next{
+    right: 15px;
+}
+
+.btn:hover{
+    background: rgba(0,0,0,.8);
+}
+.porsche-btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.porsche-btn{
+    text-decoration: none;
+    background: linear-gradient(135deg, #413030, #553636);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.porsche-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.35);
+    background: linear-gradient(135deg, #864444, #5a1b24);
+}
+</style>
+
+    </head>
+<body>
+    <section class="hero">
+        <div class="contato">
+            <a href= "contatpage.html"><button class = "contat-button">entre em contato</button></a>
+        </div>
+        <div class="hero-content">
+            <div class="texto">
+                 <div class="logo"><img src="../images/larticon.webp" style="width: 250px; height: 100px; margin-top: 1px; width: 250px;"></div>
+                <h2>
+                    clássicos que<br>
+                    conta histórias
+                </h2>
+                <p>
+                    nosso acervo contém carros icônicos que
+                    marcaram gerações. tradição, elegância
+                    e paixão em cada detalhe.
+                </p>
+                <div class="botoes">
+                    <a href = "acervo.html">
+                        <button>ver acervo</button>
+                    </a>
+                    <a href = "saibamais.html"><button class = "b2">saiba mais</button></a>
+                </div>
+            </div>
+            <div class="carros">
+                <img src="../images/carroclassico2.png" class = "carro2">
+                <img src="../images/carroclassico1.png" class = "carro1">
+            </div>
+        </div>
+    </section>
+    <section class="titulo">
+        <div class="linha"></div>
+        <h2>OS MAIS VENDIDOS DA <span>L'ART</span></h2>
+        <div class="carousel-container">
+            <button class="btn prev">&#10094;</button>
+            <div class="carousel">
+                <img src = "../images/porsche3.png" alt="Porsech">
+                <img src= "../images/porsche2.png" alt="Porsech">
+                <img src= "../images/porsche1.webp" alt="Porsech">
+            </div>
+            <button class="btn next">&#10095;</button>
+        </div>
+        <div class="porsche-btn-container">
+    <a href="porsche1.html" class="porsche-btn">
+        Conheça o Porsche
+    </a>
+</div>
+    </section>
+    <div class="container-btn">
+    <a href="acervo.html" class="btn-acervo">
+        VEJA NOSSO ACERVO COMPLETO
+    </a>
+</div>
+</a>
+    </section>
+    <section class="sobre">
+        <div class="linha"></div>
+        <h2>
+            SOBRE A <span>L'ART</span>
+        </h2>
+        <img src = "../images/carline.png" class = "carline" style="width: 900px; height: auto; border-radius: 8px;">
+        <p>
+            A L'Art é uma empresa que atua no segmento de arte, design 
+            e decoração, oferecendo produtos e serviços voltados para a
+            valorização de ambientes e para a expressão artística.
+        </p>
+        <p>
+            A proposta da L'Art é transformar ideias em
+            projetos que combinam estética e funcionalidade, 
+            buscando sempre a satisfação dos clientes. Além disso,
+            a empresa valoriza a criatividade, o profissionalismo 
+            e a atenção aos detalhes, fatores que contribuem para a 
+            construção de sua identidade no mercado.
+        </p>
+    </section>
+    <section class="instagram">
+        <a href="https://www.instagram.com/lart.br?igsh=bGx0ejJtazIxbWZy" class="instagram-btn">
+    <img src="../images/instagramicon.png" alt="Instagram" style="width: 50px; height: 50px;">
+    <span>Siga nossa página</span>
+</a>
+    </section>
+    <footer>
+        <div class = "logo"><img src = "../images/larticon.webp"></div>
+    </footer>
+
+    <script>
+
+const carousel = document.querySelector(".carousel");
+const imagens = document.querySelectorAll(".carousel img");
+
+let indice = 0;
+
+document.querySelector(".next").addEventListener("click", () => {
+    indice++;
+
+    if(indice >= imagens.length){
+        indice = 0;
+    }
+
+    carousel.style.transform = `translateX(-${indice * 100}%)`;
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+    indice--;
+
+    if(indice < 0){
+        indice = imagens.length - 1;
+    }
+
+    carousel.style.transform = `translateX(-${indice * 100}%)`;
+});
+
+</script>
+
+
+</body>
+</html>

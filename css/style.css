@@ -1,0 +1,317 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#faf8f5;
+}
+
+.hero{
+background:#6d3940;
+padding:40px;
+border-radius:0 0 30px 30px;
+}
+
+.contato{
+display:flex;
+justify-content:flex-end;
+}
+
+.contato a{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:12px 25px;
+border-radius:30px;
+}
+
+.hero-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.texto h1{
+font-size:70px;
+color:white;
+font-family:serif;
+align-items: center;
+gap: 20px;
+}
+.texto h2{
+font-size:60px;
+color:#f6e8df;
+font-weight:300;
+margin:20px 0;
+align-items: center;
+gap: 20px;
+}
+
+.texto p{
+color:white;
+max-width:350px;
+line-height:1.6;
+align-items: center;
+gap: 20px;
+}
+
+.botoes{
+margin-top:25px;
+align-items: center;
+gap: 20px;
+
+}
+
+.botoes button{
+padding:12px 30px;
+border-radius:30px;
+border:1px solid white;
+background:transparent;
+color:white;
+margin-right:10px;
+cursor:pointer;
+align-items: center;
+}
+.b2{
+    gap: 20px;
+}
+
+.carros{
+display:flex;
+align-items:center;
+gap:30px;
+}
+.carro1{
+    display: flex;
+    margin-left: 30px;
+    margin-right: 325px;
+    width: 535px;
+    margin-top: 300px;
+}
+.carro2{
+    display: flex;
+    width: 530px;
+    margin-right: auto;
+    margin-left: -400px;
+
+}
+
+.titulo{
+padding:80px 0;
+text-align:center;
+}
+.titulo h2,
+.sobre h2{
+margin:20px 0;
+font-weight:300;
+}
+
+.titulo span,
+.sobre span{
+font-weight:bold;
+}
+
+.card-central{
+background:#9a6467;
+padding:40px;
+}
+
+.card-central img{
+width:650px;
+border-radius:15px;
+}
+
+.seta{
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+background:#13233a;
+color:white;
+cursor:pointer;
+font-size:20px;
+}
+
+.destaque body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#f5f5f5;
+}
+
+.caixa-vinho{
+background:#6d3940;
+padding:30px;
+width:865px;
+}
+
+.caixa-vinho img{
+width:800px;
+}
+
+.acervo{
+text-align:center;
+padding:50px;
+}
+
+.acervo button{
+background:#13233a;
+color:white;
+font-size:28px;
+font-weight:bold;
+padding:25px 50px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.sobre{
+max-width:1000px;
+margin:auto;
+padding:80px 40px;
+text-align:center;
+}
+
+.sobre p{
+margin-top:40px;
+font-size:20px;
+line-height:1.8;
+color:#444;
+text-align:left;
+}
+
+.instagram{
+display:flex;
+justify-content:center;
+padding:60px;
+}
+
+.instagram a{
+background:#13233a;
+color:white;
+text-decoration:none;
+padding:25px 50px;
+font-size:35px;
+border-radius:6px;
+}
+
+.instagram i{
+margin-right:15px;
+}
+footer{
+    position: relative;
+    height: 120px;
+    background: #6d3940;
+}
+
+.redes{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+
+    display: flex;
+    gap: 15px;
+}
+
+.contat-button{
+    padding: 14px 45px;
+    border: none;
+    background: #6d3940;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+.carline{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* animação do butão do instagram*/
+
+.instagram-btn {
+    width: 500px;
+    height: 80px;
+    background: black;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 32px;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.instagram-btn img {
+    width: 50px;
+    transition: transform 0.5s ease;
+}
+
+.instagram-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.instagram-btn:hover img {
+    transform: rotate(360deg);
+}
+
+
+/* but. acervo*/
+
+.container-btn {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    margin: 50px 0;
+}
+
+.btn-acervo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 600px;
+    height: 70px;
+
+    background: #000000;
+    color: white;
+
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.btn-acervo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    letter-spacing: 3px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.btn-acervo{
+    margin: 0 auto;
+}

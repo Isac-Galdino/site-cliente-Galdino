@@ -1,0 +1,228 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Georgia, serif;
+}
+
+body{
+    background:#f5f1eb;
+    color:#3b2a22;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 80px;
+    position:absolute;
+    width:100%;
+    z-index:100;
+}
+
+.logo{
+    font-size:2rem;
+    letter-spacing:3px;
+    color:#f5f1eb;
+}
+
+nav a{
+    color:#f5f1eb;
+    text-decoration:none;
+    margin-left:30px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c8a97e;
+}
+
+.hero{
+    height:100vh;
+    background:url('../images/classicbg.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.overlay{
+    background:rgba(59,42,34,0.70);
+    padding:60px;
+    text-align:center;
+    border:1px solid rgba(245,241,235,0.2);
+}
+
+.overlay h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    color:#f5f1eb;
+}
+
+.overlay p{
+    font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
+    color:#e9dfd2;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    background:#6d4c41;
+    color:#f5f1eb;
+    cursor:pointer;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#c8a97e;
+    color:#3b2a22;
+}
+
+section{
+    padding:100px 80px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+    color:#6d4c41;
+}
+
+.historia{
+    background:#f5f1eb;
+}
+
+.historia p,
+.restauracao p{
+    line-height:1.8;
+    font-size:1.1rem;
+    color:#4a3a32;
+}
+
+.curadoria{
+    background:#e9dfd2;
+}
+
+.cards{
+    display:flex;
+    gap:30px;
+    margin-top:40px;
+}
+
+.card{
+    background:#ffffff;
+    padding:30px;
+    flex:1;
+    border:1px solid #c8a97e;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    margin-bottom:20px;
+    color:#6d4c41;
+}
+
+.restauracao{
+    background:#f5f1eb;
+}
+
+.numeros{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    background:#3b2a22;
+    padding:80px;
+}
+
+.box{
+    text-align:center;
+}
+
+.box h3{
+    font-size:3rem;
+    color:#c8a97e;
+}
+
+.box p{
+    color:#f5f1eb;
+}
+
+.cta{
+    text-align:center;
+    background:#e9dfd2;
+}
+
+.cta h2{
+    color:#3b2a22;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#3b2a22;
+    color:#c8a97e;
+}
+body{
+    background:#f5f1eb;
+    color:#1f140f;
+}
+
+.overlay{
+    background:rgba(31,20,15,0.82);
+}
+
+button{
+    background:#4a2c20;
+    color:#f5f1eb;
+}
+
+button:hover{
+    background:#a67c52;
+    color:#1f140f;
+}
+
+h2{
+    color:#4a2c20;
+}
+
+.historia p,
+.restauracao p{
+    color:#2d1b14;
+}
+
+.curadoria{
+    background:#e6d8c8;
+}
+
+.card{
+    border:1px solid #a67c52;
+}
+
+.card h3{
+    color:#4a2c20;
+}
+
+.numeros{
+    background:#1f140f;
+}
+
+.box h3{
+    color:#a67c52;
+}
+
+.cta h2{
+    color:#1f140f;
+}
+
+footer{
+    background:#1f140f;
+    color:#a67c52;
+}

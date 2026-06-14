@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria Automotiva L'ART</title>
+<link rel="stylesheet" href="acervo.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Georgia, serif;
+}
+
+body{
+    background:#1d1d1d;
+    display:flex;
+    justify-content:center;
+}
+
+.container{
+    width:100vw;
+   
+    background:#dcdcdc;
+    position:relative;
+    min-height:100vh;
+}
+
+/* Logo gigante ao fundo */
+.container::before{
+    content:"L";
+    position:absolute;
+    top:100px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:900px;
+    color:rgba(0,0,0,.12);
+    font-weight:bold;
+    z-index:0;
+}
+
+header{
+    background:#6d3940;
+    color:white;
+    padding:8px 20px;
+    position:relative;
+    z-index:2;
+}
+
+.topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:35px;
+    font-weight:bold;
+}
+
+.titulo{
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.marcas{
+    background:#ececec;
+    padding:5px;
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    border-bottom:1px solid #aaa;
+}
+
+.marcas button{
+    position: relative;
+    overflow: hidden;
+
+    border: none;
+    background: linear-gradient(145deg, #4e3437, #6d3940);
+    color: white;
+
+    padding: 10px 18px;
+    border-radius: 25px;
+
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    transition: all 0.35s ease;
+}
+
+/* brilho interno */
+.marcas button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+    transition: .6s;
+}
+
+/* hover */
+.marcas button:hover{
+    transform: translateY(-4px) scale(1.05);
+    background: linear-gradient(145deg, #5a1b24, #7a2d39);
+    box-shadow: 0 8px 20px rgba(109,57,64,.45);
+}
+
+/* animação do brilho */
+.marcas button:hover::before{
+    left: 120%;
+}
+
+/* clique */
+.marcas button:active{
+    transform: scale(.95);
+}
+
+/* botão ativo */
+.todo{
+    background: linear-gradient(145deg, #aa5555, #8a3030) !important;
+    box-shadow: 0 0 15px rgba(170,85,85,.5);
+}
+
+
+
+.galeria{
+    position:relative;
+    z-index:2;
+    padding:30px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:35px;
+}
+
+.card{
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+}
+
+.card p{
+    margin-top:10px;
+    font-size:13px;
+    color:#444;
+}
+
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:30px;
+}
+
+.todo{
+    background: #aa5555;
+}
+.card{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 18px;
+    text-decoration: none;
+}
+
+.card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+    transition: transform .4s ease;
+}
+
+/* camada do "Ver detalhes" */
+.overlay{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    background: rgba(109,57,64,.9);
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: bottom .35s ease;
+}
+
+/* animação ao passar o mouse */
+.card:hover .overlay{
+    bottom: 0;
+}
+
+/* zoom da imagem */
+.card:hover img{
+    transform: scale(1.08);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <div class="topo">
+
+        <div style="display:flex;align-items:center;gap:10px;">
+            <a href="index.html" style="color:white;text-decoration:none;font-size:20px;">
+                <img src="../images/houseicon.png" style="width: 50px; height: auto;">
+            </a>
+
+            <img src="../images/larticon.webp" class = "logo">
+        </div>
+
+        <div class="titulo">GALERIA AUTOMOTIVA</div>
+
+    </div>
+</header>
+
+<div class="marcas">
+    <a href = "acervo.html"><button>Todos</button></a>
+    <a href = "filtragembmw.html"><button>BMW</button></a>
+    <a href = "filtragemchevrolet.html"><button>Chevrolet</button></a>
+    <a href = "filtragemdodge.html"><button>Dodge</button></a>
+    <a href = "filtragemjaguar.html"><button>Jaguar</button></a>
+    <a href = "filtragemmercedesbenz.html"><button>Mercedes-Benz</button></a>
+    <a href = "filtragemporsche.html"><button>Porsche</button></a>
+    <button class = "todo">Toyota</button>
+    <a href = "filtragemvolkswagen.html"><button>Volkswagen</button></a>
+    <a href = "filtragemvolvo.html"><button>Volvo</button></a>
+    <a href = "filtragemford.html"><button>Ford</button></a>
+    <a href = "filtragemlandrover.html"><button>Land Rover</button></a>
+</div>
+
+<div class="galeria">
+
+<a href="toyota3.html" class="card">
+    <img src="../images/foto-toyota3-1.png">
+    <p>2001 Toyota Hilux SR5</p>
+    <div class="overlay">Ver detalhes →</div>
+</a>
+
+<a href="toyota2.html" class="card">
+    <img src="../images/foto-toyota2-1.png">
+    <p>1976 Toyota Celica GT</p>
+    <div class="overlay">Ver detalhes →</div>
+</a>
+
+<a href="toyota1.html" class="card">
+    <img src="../images/foto-toyota1-1.png">
+    <p>1994 Toyota Paseo</p>
+    <div class="overlay">Ver detalhes →</div>
+</a>
+
+</body>
+</html>

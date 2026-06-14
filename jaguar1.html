@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1995 Jaguar XJ6</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #111111;
+      --paper: #ffffff;
+      --ink: #222222;
+      --muted: #5c5c5c;
+      --wine: #382121;
+      --wine-dark: #6d3940;
+      --line: #d8d8d8;
+      --soft: #f5f2f1;
+      --ddd: #864444b9;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body{
+      width: 100%;
+      min-height: 100%;
+    }
+   
+
+    body{
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    .page{
+      width: 100%;
+      min-height: 100vh;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar{
+      width: 100%;
+      background: var(--wine-dark);
+      color: #fff;
+      border-bottom: 4px solid #8e6b70;
+    }
+
+    .topbar-inner{
+      width: min(1400px, 100%);
+      margin: 0 auto;
+      padding: 4px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .brand-logo{
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .brand-badge{
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(255,255,255,.95);
+      white-space: nowrap;
+    }
+
+    .container{
+      width: min(1400px, 100%);
+      margin: 0 auto;
+      padding: clamp(16px, 2vw, 28px);
+      flex: 1;
+    }
+
+    .hero{
+      width: 100%;
+      height: clamp(280px, 56vh, 760px);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #c9c1bc;
+      background: #201d20;
+    }
+
+    .hero::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.16), rgba(0,0,0,.03) 40%, rgba(0,0,0,.08));
+      pointer-events: none;
+    }
+
+    .hero img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+    .intro{
+      margin-top: 18px;
+    }
+
+    .title{
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #1d1d1d;
+    }
+
+    .text{
+      font-size: clamp(14px, 1.2vw, 15px);
+      line-height: 1.75;
+      color: #303030;
+    }
+
+    .grid{
+    display: grid;
+    grid-template-columns: 2.15fr .95fr;
+    gap: 22px;
+    align-items: start;
+}
+
+
+
+    .section-title{
+      font-size: 18px;
+      font-weight: 700;
+      margin: 14px 0 10px;
+      color: #1f1f1f;
+    }
+
+    .photo{
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #cbc3bd;
+      background: #201d20;
+    }
+
+    .photo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo.main{
+      height: 500px;
+    }
+
+    .photo.main img{
+      object-position: center 44%;
+      transform: scale(1.18);
+    }
+
+.spec{
+    border: 1px solid #bdb4af;
+    background: #fff;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    align-self: start;
+}
+
+.spec{
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+
+    .spec-head{
+      background: var(--wine);
+      color: #fff;
+      text-align: center;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .spec-body{
+      padding: 14px;
+    }
+
+    .spec-row{
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid #ececec;
+      font-size: 14px;
+    }
+
+    .spec-row:last-child{
+      border-bottom: 0;
+    }
+
+    .spec-label{
+      font-weight: 700;
+      color: #1f1f1f;
+    }
+
+    .spec-value{
+      color: #353535;
+    }
+
+    .price{
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #dcdcdc;
+      display: grid;
+      grid-template-columns: 75px 1fr;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .price strong{
+      font-size: 12px;
+      letter-spacing: .7px;
+    }
+
+    .gallery{
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .gallery .photo{
+      height: 230px;
+    }
+
+    .gallery .photo:nth-child(1) img{
+      object-position: center 44%;
+      transform: scale(1.16);
+    }
+
+    .gallery .photo:nth-child(2) img{
+      object-position: center 58%;
+      transform: scale(1.2);
+    }
+
+    .interior{
+      margin-top: 28px;
+    }
+
+    .interior-box{
+      margin-top: 14px;
+      background: #faf7f6;
+      border: 1px solid #e4deda;
+      padding: 14px;
+    }
+
+    .interior-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .interior-grid .photo{
+      height: 280px;
+    }
+
+    .interior-grid .photo:first-child img{
+      object-position: center 83%;
+      transform: scale(1.25);
+    }
+
+    .interior-grid .photo:last-child img{
+      object-position: center 89%;
+      transform: scale(1.28);
+    }
+
+    .footer-cta{
+      margin-top: auto;
+      width: 100%;
+      background: var(--ddd);
+      color: #ffffff;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: .10px;
+      padding: 1px 1px;
+      border-top: 1px solid #ffffff;
+      border-bottom: 3px solid #ffffff;
+      border-radius: 50px;
+    }
+
+    .footer{
+      width: 100%;
+      background: var(--wine-dark);
+      color: #ffffff;
+    }
+
+    .footer-inner{
+      width: min(1400px, 100%);
+      margin: 0 auto;
+      padding: -500px -600px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 18px;
+    }
+
+    .footer-logo{
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .source-note{
+      margin-top: 14px;
+      font-size: 12px;
+      color: #ffffff;
+    }
+
+    .source-note a{
+      color: inherit;
+    }
+
+    @media (max-width: 900px){
+      .grid{
+        grid-template-columns: 1fr;
+      }
+
+      .photo.main{
+        height: 250px;
+      }
+
+      .spec-row{
+        grid-template-columns: 92px 1fr;
+      }
+
+      .interior-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .interior-grid .photo{
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .topbar-inner,
+      .container,
+      .footer-inner{
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .brand-logo{
+        font-size: 24px;
+      }
+
+      .brand-badge{
+        font-size: 11px;
+        padding: 5px 10px;
+      }
+
+      .hero{
+        height: 36vh;
+        min-height: 220px;
+      }
+
+      .hero img{
+        object-position: center 10%;
+        transform: scale(1.28);
+      }
+
+      .gallery{
+        grid-template-columns: 1fr;
+      }
+
+      .gallery .photo{
+        height: 220px;
+      }
+    }
+
+
+    .brand-badge{
+    padding:5px;
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+   
+}
+
+.brand-badge button{
+    border:none;
+    background:#704d51;
+    color:rgb(255, 255, 255);
+    padding:9px 20px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.brand-badge button:hover{
+    background-color: #5a1b24;
+}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div>
+            <a href="index.html">
+              <button style="background: none; border: none; cursor: pointer;">
+                <img src="../images/houseicon.png" style="width: 40px; height: 40px;">
+              </button>
+            </a>
+          </div>
+          <div class="logo"><img src="../images/larticon.webp" style="width: 150px; height: auto; margin-top: 5px;"></div>
+          <div class="brand-badge" href=""><a href = "acervo.html"><button>acervo completo</button></a></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="container">
+      <div class="hero">
+        <img src="../images/foto-jaguar1-1.png" alt="Land Rover Série III 1974" /> <!-- Foto inicial -->
+      </div>
+
+      <section class="intro">
+        <h1 class="title">1995 Jaguar XJ6</h1> 
+        <p class="text">
+          <br>
+          O 1995 Jaguar XJ6 representa a elegância britânica em sua forma mais autêntica. Desde a primeira linha de seu desenho até o funcionamento suave do seis-em-linha, o modelo combina tradição, presença e refinamento mecânico. Além disso, este exemplar preserva as proporções clássicas da marca e entrega uma condução que privilegia conforto, equilíbrio e personalidade.
+
+        </p>
+      </section>
+      <br><br>
+
+      <section class="grid">
+        <div>
+          <div class="photo main">
+            <img src="../images/foto-jaguar1-2.png" alt="Land Rover Série III em destaque" /> <!-- Foto em destaque (pode colocar uma foto do lado oposto da principal)-->
+          </div>
+          <br><br>
+
+          <h2 class="section-title">Carroceria &amp; Design</h2>
+          <p class="text">
+            <br>
+             O Jaguar XJ6 1995 destaca-se pela carroceria sedã de luxo longa e baixa, com 5,02 metros de comprimento e linha de teto rebaixada. Na cor prata, seu design britânico clássico é acentuado pelos faróis dianteiros circulares duplos, grade frontal tradicional e interior que une o couro ao acabamento em madeira.
+            <br><br>
+          <div class="gallery">
+            <div class="photo">
+              <img src="../images/foto-jaguar1-3.png" alt="Vista adicional do Land Rover" />  <!-- Foto de frente do carro-->
+            </div>
+            <div class="photo">
+              <img src="../images/foto-jaguar1-4.png" alt="Detalhe do Land Rover" />  <!-- Foto de costa do carro-->
+            </div>
+          </div>
+        </div>
+ 
+        </div>
+
+<aside class="spec">
+
+        <aside class="spec">
+          <div class="spec-head"> 1995 Jaguar XJ6 </div>
+          <div class="spec-body">
+            <div class="spec-row">
+              <div class="spec-label">Marca</div>
+              <div class="spec-value">Jaguar</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Modelo</div>
+              <div class="spec-value">XJ6</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Ano</div>
+              <div class="spec-value">1995
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Cor</div>
+              <div class="spec-value">Branco</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Motor</div>
+              <div class="spec-value">4.0L 6 cilindros em linha</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Potência</div>
+              <div class="spec-value"> 241 Cavalos</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Tração</div>
+              <div class="spec-value">Traseira </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Torque</div>
+              <div class="spec-value">38,5 kgfm</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Transmissão</div>
+              <div class="spec-value">Manual de até 4 velocidades</div>
+            </div>
+
+            <div class="price">
+              <strong>VALOR</strong>
+              <div class="spec-value">R$ 80.000,00 - R$ 150.000,00 MIL +</div>
+            </div>
+          </div>
+        
+</aside>
+
+</section>
+
+
+  
+    
+      <br><br>
+      <section class="interior">
+        <h2 class="section-title">Interior</h2>
+        <p class="text">
+          <br>
+            O habitáculo é revestido em couro nobre Connolly com selo real. O painel, as portas e o volante contam com apliques em madeira genuína<br>
+            Para viagens longas, possui amplo espaço interno e porta-malas de 410 litros. Os bancos dianteiros e traseiros priorizam o conforto macio, comum aos clássicos sedãs ingleses  
+            <br><br>
+        <div class="interior-box">
+          <div class="interior-grid">
+            <div class="photo">
+              <img src="../images/foto-jaguar1-5.png" alt="Detalhe interno do Land Rover" /> <!-- Foto banco do carro-->
+            </div>
+            <div class="photo">
+              <img src="../images/foto-jaguar1-6.png" alt="Banco e acabamento interno do Land Rover" />  <!-- Foto guidom do carro-->
+            </div>
+          </div>
+        </div>
+
+        <p class="source-note">
+          Imagem utilizada como base visual:
+          <a href="6f293958-c32a-4c49-97f8-d3f293880742.jpeg" target="_blank">abrir referência</a>.
+        </p>
+      </section>
+    </section>
+
+    <div class="footer-cta"></div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+       <div><img src="../images/larticon.webp" style="width: 100px; height: 40px; "></div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
