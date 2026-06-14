@@ -173,7 +173,33 @@ header{
 .todo{
     background: #aa5555;
 }
+.pesquisa{
+    margin-right:10px;
+}
 
+.pesquisa input{
+    padding:8px 12px;
+    border:none;
+    border-radius:6px;
+    outline:none;
+    width:5440px;
+    font-size:14px;
+    background:white;
+    color:#333;
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+  
+    
+}
+
+
+
+.pesquisa input:focus{
+    box-shadow:0 0 0 2px #6d3940;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
 </style>
 </head>
 <body>
@@ -195,6 +221,10 @@ header{
 
     </div>
 </header>
+<br><br>
+<div class="pesquisa">
+    <input type="text" id="searchInput" placeholder="Pesquisar veículo...">
+</div>
 
 <div class="marcas">
     <button class = "todo">Todos</button>
@@ -423,5 +453,23 @@ header{
     <div class="overlay">Ver detalhes →</div>
 </a>
 
+<script>
+const searchInput = document.getElementById('searchInput');
+const cards = document.querySelectorAll('.card');
+
+searchInput.addEventListener('keyup', () => {
+    const texto = searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+        const nome = card.querySelector('p').textContent.toLowerCase();
+
+        if(nome.includes(texto)){
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+</script>
 </body>
 </html>
